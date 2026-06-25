@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, My Favorite Person ❤️</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts (Playfair Display & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti untuk Efek Kembang Api -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-rose-100 selection:text-rose-700">
+
+    <!-- 1. HERO SECTION -->
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden bg-gradient-to-b from-rose-50/50 to-stone-50">
+        <div class="space-y-6 max-w-2xl animate-fade-in">
+            <span class="text-sm tracking-widest text-rose-500 font-semibold uppercase">A Special Message Just For You</span>
+            <h1 class="text-4xl md:text-6xl font-serif font-medium text-stone-900 leading-tight">
+                Satu kesalahan tidak akan mengurangi momen indah yang sudah kita lewati.
+            </h1>
+            <p class="text-stone-500 max-w-md mx-auto text-sm md:text-base font-light leading-relaxed">
+                Mas membuat halaman kecil ini khusus untuk mengingatkan kita kembali, tentang mengapa kita sejauh ini bertahan. Scroll ke bawah ya...
+            </p>
+            <div class="pt-8">
+                <div class="animate-bounce inline-block text-stone-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. TIMELINE SECTION -->
+    <!-- 2. TIMELINE SECTION -->
+    <section class="py-20 max-w-3xl mx-auto px-4 relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-px bg-stone-200 h-[85%] top-16 z-0"></div>
+        
+        <h2 class="text-center font-serif text-3xl mb-16 text-stone-900">Our Little Journey</h2>
+
+        <div class="space-y-16 relative z-10">
+            <!-- Momen 1 -->
+            <div class="flex flex-col md:flex-row items-center md:justify-between group">
+                <div class="w-full md:w-[45%] text-center md:text-right space-y-2 md:pr-8">
+                    <span class="text-xs font-semibold text-rose-500 uppercase tracking-wider">Awal Mula</span>
+                    <h3 class="font-serif text-xl font-medium text-stone-900">Hari Dimana Kita Bertemu</h3>
+                    <p class="text-sm text-stone-500 font-light leading-relaxed">Ingat gak waktu pertama kali kita kenal? Dunia rasanya biasa aja, sampai akhirnya kamu datang membawa warna baru yang gak pernah aku duga sebelumnya.</p>
+                </div>
+                <div class="my-4 md:my-0 w-8 h-8 rounded-full bg-white border border-stone-200 flex items-center justify-center text-xs text-rose-500 font-medium shadow-sm transition group-hover:scale-110 group-hover:border-rose-300">01</div>
+                <div class="w-full md:w-[45%] md:pl-8">
+                    <!-- class aspect-[4/3] dihapus dari pembungkus div -->
+                    <div class="rounded-2xl bg-stone-200 overflow-hidden shadow-sm transition group-hover:shadow-md">
+                        <!-- Menggunakan w-full h-auto agar rasio foto asli terjaga -->
+                        <img src="1.jpeg" alt="Momen 1" class="w-full h-auto display-block">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Momen 2 -->
+            <div class="flex flex-col-reverse md:flex-row items-center md:justify-between group">
+                <div class="w-full md:w-[45%] md:pr-8">
+                    <!-- class aspect-[4/3] dihapus -->
+                    <div class="rounded-2xl bg-stone-200 overflow-hidden shadow-sm transition group-hover:shadow-md">
+                        <img src="2.jpeg" alt="Momen 2" class="w-full h-auto display-block">
+                    </div>
+                </div>
+                <div class="my-4 md:my-0 w-8 h-8 rounded-full bg-white border border-stone-200 flex items-center justify-center text-xs text-rose-500 font-medium shadow-sm transition group-hover:scale-110 group-hover:border-rose-300">02</div>
+                <div class="w-full md:w-[45%] text-center md:text-left space-y-2 md:pl-8">
+                    <span class="text-xs font-semibold text-rose-500 uppercase tracking-wider">Tawa Bersama</span>
+                    <h3 class="font-serif text-xl font-medium text-stone-900">Hal-Hal Kecil yang Berkesan</h3>
+                    <p class="text-sm text-stone-500 font-light leading-relaxed">Dari sekadar teleponan malam-malam sampai cerita hal gak penting yang bikin kita ketawa lepas. Bahagiaku sesederhana melihat kamu tersenyum karena aku.</p>
+                </div>
+            </div>
+
+            <!-- Momen 3 -->
+            <div class="flex flex-col md:flex-row items-center md:justify-between group">
+                <div class="w-full md:w-[45%] text-center md:text-right space-y-2 md:pr-8">
+                    <span class="text-xs font-semibold text-rose-500 uppercase tracking-wider">Proses Kita</span>
+                    <h3 class="font-serif text-xl font-medium text-stone-900">Saling Bertumbuh</h3>
+                    <p class="text-sm text-stone-500 font-light leading-relaxed">Kita pernah melewati banyak hal, belajar memahami isi kepala masing-masing, dan pelan-pelan membangun mimpi yang ingin kita tuju bersama.</p>
+                </div>
+                <div class="my-4 md:my-0 w-8 h-8 rounded-full bg-white border border-stone-200 flex items-center justify-center text-xs text-rose-500 font-medium shadow-sm transition group-hover:scale-110 group-hover:border-rose-300">03</div>
+                <div class="w-full md:w-[45%] md:pl-8">
+                    <!-- class aspect-[4/3] dihapus -->
+                    <div class="rounded-2xl bg-stone-200 overflow-hidden shadow-sm transition group-hover:shadow-md">
+                        <img src="3.jpeg" alt="Momen 3" class="w-full h-auto display-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. APOLOGY LETTER SECTION -->
+    <section class="py-24 bg-rose-50/30 px-4">
+        <div class="max-w-xl mx-auto text-center space-y-8 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-stone-100">
+            <span class="text-2xl">💌</span>
+            <h2 class="font-serif text-3xl text-stone-900">Surat Untukmu</h2>
+            <div class="text-stone-600 font-light leading-relaxed text-sm md:text-base text-left space-y-4">
+                <p>Halo Sayang,</p>
+                <p>Aku tau belakangan ini aku bikin kamu kesal dan kecewa. Aku bener-bener minta maaf ya atas kesalahanku kemarin. Aku sadar sikapku egois dan kurang mengerti posisi kamu.</p>
+                <p>Mengingat kembali semua hal indah yang udah kita lewatin di atas, aku bener-bener gak mau kehilangannya hanya karena kebodohanku. Aku janji akan belajar lebih sabar dan lebih dewasa lagi buat hubungan kita.</p>
+                <p>Kamu masih mau kan berproses bareng aku? I promise to be a better person for you.</p>
+            </div>
+            
+            <!-- INTERACTIVE BUTTONS -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-center items-center gap-4 relative min-h-[80px]" id="button-container">
+                <button id="btn-yes" class="w-full sm:w-auto px-8 py-3 bg-rose-500 text-white font-medium rounded-full shadow-md shadow-rose-200 hover:bg-rose-600 active:scale-95 transition cursor-pointer">
+                    Maafin Aku ❤️
+                </button>
+                <button id="btn-no" class="w-full sm:w-auto px-8 py-3 bg-stone-200 text-stone-600 font-medium rounded-full hover:bg-stone-300 transition sm:absolute">
+                    Pikir-pikir Dulu 🥺
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SUCCESS POPUP MODAL -->
+    <div id="modal" class="fixed inset-0 bg-stone-900/40 backdrop-blur-xs flex items-center justify-center p-4 hidden z-50 animate-fade-in">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center space-y-4 shadow-xl">
+            <div class="text-4xl">🥰</div>
+            <h3 class="font-serif text-2xl font-semibold text-stone-900">Makasih Banyak Sayang!</h3>
+            <p class="text-stone-500 text-sm font-light">Makasih ya udah dimaafin. Aku janji bakal jaga perasaan kamu lebih baik lagi ke depannya. Love you sayang!</p>
+            <button id="btn-close" class="mt-4 px-6 py-2 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 transition cursor-pointer">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const btnYes = document.getElementById('btn-yes');
+        const btnNo = document.getElementById('btn-no');
+        const modal = document.getElementById('modal');
+        const btnClose = document.getElementById('btn-close');
+        const container = document.getElementById('button-container');
+
+        // 1. Logika Tombol "Pikir-pikir Dulu" (Menghindar saat didekati/diklik)
+        function moveButton() {
+            // Mendapatkan dimensi kontainer agar tombol tidak keluar jalur terlalu jauh
+            const containerWidth = container.offsetWidth;
+            const containerHeight = container.offsetHeight;
+            
+            // Generate posisi acak untuk tombol di sekitar area kontainer (khusus layar desktop)
+            if (window.innerWidth > 640) {
+                const randomX = Math.floor(Math.random() * (containerWidth - btnNo.offsetWidth));
+                const randomY = Math.floor(Math.random() * 100) - 50; // bergerak vertikal sedikit
+                
+                btnNo.style.left = `${randomX}px`;
+                btnNo.style.top = `${randomY}px`;
+            } else {
+                // Untuk mobile, posisi acak sederhana agar tetap interaktif
+                const randomX = Math.floor((Math.random() * 100) - 50);
+                btnNo.style.transform = `translateX(${randomX}px)`;
+            }
+        }
+
+        // Jalankan fungsi menghindar baik saat hover (desktop) maupun touch/click (mobile)
+        btnNo.addEventListener('mouseenter', moveButton);
+        btnNo.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveButton();
+        });
+
+        // 2. Logika Tombol "Maafin Aku" (Muncul Kembang Api & Modal)
+      // 2. Logika Tombol "Maafin Aku" (Muncul Kembang Api, Modal, & Kirim WA)
+        btnYes.addEventListener('click', () => {
+            // Efek Confetti (Kembang Api Digital)
+            var duration = 3 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 } });
+                confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
+                if (Date.now() < end) { requestAnimationFrame(frame); }
+            }());
+
+            // Tampilkan Modal Sukses di website
+            modal.classList.remove('hidden');
+
+            // --- TAMBAHAN LOGIKA WHATSAPP ---
+            // Ganti dengan nomor WA kamu (gunakan kode negara, contoh: 628123xxxx)
+            const nomorWA = "6281230187720"; 
+            const teksPesan = encodeURIComponent("Iya sayang, udah aku maafin kok! ❤️ Aku udah liat websitenya, makasih yaaa...");
+            
+            // Berikan sedikit jeda 2 detik agar dia bisa melihat popup sukses & kembang api dulu sebelum dialihkan
+            setTimeout(() => {
+                window.open(`https://api.whatsapp.com/send?phone=${nomorWA}&text=${teksPesan}`, '_blank');
+            }, 2000);
+        });
+
+        // 3. Tutup Modal
+        btnClose.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            // Reset posisi tombol "No" ke semula jika ingin dimainkan lagi
+            btnNo.style.left = '';
+            btnNo.style.top = '';
+            btnNo.style.transform = '';
+        });
+    </script>
+</body>
+</html>
