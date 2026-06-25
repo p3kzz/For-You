@@ -138,45 +138,44 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
+<script>
         const btnYes = document.getElementById('btn-yes');
         const btnNo = document.getElementById('btn-no');
         const modal = document.getElementById('modal');
         const btnClose = document.getElementById('btn-close');
         const container = document.getElementById('button-container');
 
-        // 1. Logika Tombol "Pikir-pikir Dulu" (Menghindar saat didekati/diklik)
+        // Fungsi baru agar tombol menghindar secara acak ke segala arah (Desktop & Mobile)
         function moveButton() {
-            // Mendapatkan dimensi kontainer agar tombol tidak keluar jalur terlalu jauh
             const containerWidth = container.offsetWidth;
-            const containerHeight = container.offsetHeight;
             
-            // Generate posisi acak untuk tombol di sekitar area kontainer (khusus layar desktop)
             if (window.innerWidth > 640) {
+                // Logika Desktop (menggunakan absolute positioning)
                 const randomX = Math.floor(Math.random() * (containerWidth - btnNo.offsetWidth));
-                const randomY = Math.floor(Math.random() * 100) - 50; // bergerak vertikal sedikit
+                const randomY = Math.floor(Math.random() * 140) - 70; // acak atas bawah -70px sampai 70px
                 
                 btnNo.style.left = `${randomX}px`;
                 btnNo.style.top = `${randomY}px`;
             } else {
-                // Untuk mobile, posisi acak sederhana agar tetap interaktif
-                const randomX = Math.floor((Math.random() * 100) - 50);
-                btnNo.style.transform = `translateX(${randomX}px)`;
+                // Logika Mobile: Mengacak koordinat X dan Y sekaligus agar bisa memutar/ke atas bawah
+                const randomX = Math.floor((Math.random() * 160) - 80); // acak kiri kanan (-80px sampai 80px)
+                const randomY = Math.floor((Math.random() * 120) - 60); // acak atas bawah (-60px sampai 60px)
+                
+                // Menggunakan translate 2D agar bergerak bebas ke segala arah
+                btnNo.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                btnNo.style.transition = 'transform 0.2s ease'; // animasi pergeseran yang mulus
             }
         }
 
-        // Jalankan fungsi menghindar baik saat hover (desktop) maupun touch/click (mobile)
+        // Jalankan fungsi saat disentuh/diklik
         btnNo.addEventListener('mouseenter', moveButton);
         btnNo.addEventListener('click', (e) => {
             e.preventDefault();
             moveButton();
         });
 
-        // 2. Logika Tombol "Maafin Aku" (Muncul Kembang Api & Modal)
-      // 2. Logika Tombol "Maafin Aku" (Muncul Kembang Api, Modal, & Kirim WA)
+        // Logika Tombol "Maafin Aku" (Muncul Kembang Api & Modal)
         btnYes.addEventListener('click', () => {
-            // Efek Confetti (Kembang Api Digital)
             var duration = 3 * 1000;
             var end = Date.now() + duration;
 
@@ -186,24 +185,19 @@
                 if (Date.now() < end) { requestAnimationFrame(frame); }
             }());
 
-            // Tampilkan Modal Sukses di website
             modal.classList.remove('hidden');
 
-            // --- TAMBAHAN LOGIKA WHATSAPP ---
-            // Ganti dengan nomor WA kamu (gunakan kode negara, contoh: 628123xxxx)
-            const nomorWA = "6281230187720"; 
-            const teksPesan = encodeURIComponent("Iya sayang, udah aku maafin kok! ❤️ Aku udah liat websitenya, makasih yaaa...");
-            
-            // Berikan sedikit jeda 2 detik agar dia bisa melihat popup sukses & kembang api dulu sebelum dialihkan
+            // Tambahan WA jika kamu pakai opsi 1
+            const nomorWA = "6281230187720"; // Sesuaikan nomor WA kamu
+            const teksPesan = encodeURIComponent("Iya sayang, udah aku maafin kok! ❤️ Aku udah liat websitenya...");
             setTimeout(() => {
                 window.open(`https://api.whatsapp.com/send?phone=${nomorWA}&text=${teksPesan}`, '_blank');
             }, 2000);
         });
 
-        // 3. Tutup Modal
+        // Tutup Modal
         btnClose.addEventListener('click', () => {
             modal.classList.add('hidden');
-            // Reset posisi tombol "No" ke semula jika ingin dimainkan lagi
             btnNo.style.left = '';
             btnNo.style.top = '';
             btnNo.style.transform = '';
